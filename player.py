@@ -7,7 +7,7 @@ class Player:
         self.name = name
         self.role = role
         self.health = health
-        self.inventory = []
+        self.inventory = Inventory()
 
     def attack(self):
         return random.randint(10, 20)
