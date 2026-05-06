@@ -1,26 +1,28 @@
+import random
+from Inventory import Inventory
+
 class Player:
-    def __init__(self, name, role, health):
+
+    def __init__(self, username, name, role, health):
+        self.username = username
         self.name = name
         self.role = role
         self.health = health
-        self.level = 1
-        self.experience = 0
-        self.inventory = []
+        self.inventory = Inventory()
 
     def attack(self):
-        return 10 + self.level
+        return random.randint(10, 20)
 
-    def gain_exp(self, amount):
-        self.experience += amount
-        if self.experience >= 50:
-            self.level += 1
-            self.health += 20
-            print(f"{self.name} leveled up!")
+    def rest(self):
+        heal = random.randint(10, 20)
+        self.health += heal
+        print(f"\n{self.username} rested and recovered {heal} health.")
 
     def show_status(self):
-        print("Name:", self.name)
+        print("\n----- PLAYER STATUS -----")
+        print("Username:", self.username)
+        print("Character:", self.name)
         print("Role:", self.role)
-        print("Level:", self.level)
         print("Health:", self.health)
-        print("EXP:", self.experience)
-        print("Inventory:", self.inventory)
+        self.inventory.show_inventory()
+        print("-------------------------")
