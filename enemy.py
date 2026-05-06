@@ -5,7 +5,7 @@ class Enemy:
     def __init__(self):
 
         enemy_types = [
-            ("Forest Mutant", 40, 10),
+            ("Alan the Destroyer", 40, 10),
             ("Wild Beast", 35, 8),
             ("Dark Hunter", 45, 12)
         ]
